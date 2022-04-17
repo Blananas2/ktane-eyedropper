@@ -21,18 +21,26 @@ public class EyedropperScript : MonoBehaviour {
     private string Code = String.Empty;
 
     void Awake () {
-        Bomb.OnBombSolved += Hide;
         Bomb.OnBombExploded += Hide;
+
+        GetComponent<KMGameInfo>().OnStateChange += state => {
+            if (state != KMGameInfo.State.PostGame) {
+                Hide();
+            }
+        };
     }
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKeyDown(KeyCode.Slash) && !Lock) {
             Toggle = !Toggle;
-        } else if (Input.GetKeyDown(KeyCode.Comma)) {
+            Debug.LogFormat("[Eyedropper] Eyedropper's Toggle set to {0}", Toggle);
+        } else if (Input.GetKeyDown(KeyCode.Comma) && Toggle) {
             Option = (Option + (NumOfOptions - 1)) % NumOfOptions;
-        } else if (Input.GetKeyDown(KeyCode.Period)) {
+            Debug.LogFormat("[Eyedropper] Eyedropper's Option set to {0}", Option);
+        } else if (Input.GetKeyDown(KeyCode.Period) && Toggle) {
             Option = (Option + 1) % NumOfOptions;
+            Debug.LogFormat("[Eyedropper] Eyedropper's Option set to {0}", Option);
         }
 
         if (Toggle) {
