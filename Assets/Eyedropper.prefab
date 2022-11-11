@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 114579033833238580}
   - component: {fileID: 114802188709242896}
   - component: {fileID: 54484681628125220}
+  - component: {fileID: 114818374020266734}
   m_Layer: 0
   m_Name: Eyedropper
   m_TagString: Untagged
@@ -939,6 +940,17 @@ MonoBehaviour:
   TextBoxes:
   - {fileID: 1176739341405008}
   - {fileID: 1156553851128902}
+--- !u!114 &114818374020266734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676409040304040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -271661043, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114958692514422150
 MonoBehaviour:
   m_ObjectHideFlags: 1
